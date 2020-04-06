@@ -70,6 +70,15 @@
               >
                 Phone Number is required
               </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  registerFormControl.phoneNo.touched &&
+                  registerFormControl.phoneNo.errors?.localPhoneNumber
+                "
+              >
+                Phone Number should start with +27
+              </span>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-success">Register</button>
