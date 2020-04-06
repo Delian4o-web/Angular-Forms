@@ -13,10 +13,10 @@ export class ContactComponent implements OnInit {
   createFormGroup() {
     return new FormGroup({
       title: new FormControl(""),
-      firstName: new FormControl(""),
+      firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl(""),
-      phoneNo: new FormControl(""),
-      email: new FormControl(""),
+      phoneNo: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email]),
       gender: new FormControl(""),
     });
   }
