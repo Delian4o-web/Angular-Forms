@@ -7,13 +7,10 @@ import { FormGroup } from "@angular/forms";
 })
 export class CustomvalidationService {
   patternValidator(): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: any } => {
-      if (!control.value) {
-        return null;
-      }
-      const regex = new RegExp("/^+27/");
-      const valid = regex.test(control.value);
-      return valid ? null : { invalidPhoneNumber: true };
+    return (control: AbstractControl) => {
+      const isValid = /^\+27/.test(control.value);
+
+      return isValid ? null : { localPhoneNumber: true };
     };
   }
 }
