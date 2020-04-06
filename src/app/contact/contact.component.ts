@@ -7,16 +7,29 @@ import { Validators } from "@angular/forms";
   styleUrls: ["./contact.component.scss"],
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
+  titles = ["Mr.", "Ms.", "Mrs.", "Dr.", "Prof."];
+  contactForm: FormGroup;
 
-  profileForm = new FormGroup({
-    title: new FormControl(""),
-    firstName: new FormControl(""),
-    lastName: new FormControl(""),
-    phoneNo: new FormControl(""),
-    email: new FormControl(""),
-    gender: new FormControl(""),
-  });
+  createFormGroup() {
+    return new FormGroup({
+      title: new FormControl(""),
+      firstName: new FormControl(""),
+      lastName: new FormControl(""),
+      phoneNo: new FormControl(""),
+      email: new FormControl(""),
+      gender: new FormControl(""),
+    });
+  }
+
+  revert() {
+    this.contactForm.reset();
+  }
+
+  onSubmit() {}
+
+  constructor() {
+    this.contactForm = this.createFormGroup();
+  }
 
   ngOnInit(): void {}
 }
