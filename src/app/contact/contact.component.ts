@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
+import { Validators } from "@angular/forms";
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
