@@ -21,7 +21,7 @@
                   registerFormControl.firstName.errors?.required
                 "
               >
-                Name is required!
+                Firstname is required!
               </span>
             </div>
             <div class="form-group">
@@ -60,6 +60,8 @@
                 type="text"
                 class="form-control"
                 formControlName="phoneNo"
+                [pattern]="mobNumberPattern"
+                #mobNumber
               />
               <span
                 class="text-danger"

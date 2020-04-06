@@ -10,6 +10,7 @@ import { phoneNumberValidator } from "../forms/validators/phone-validator";
 export class ContactComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
 
   constructor(private fb: FormBuilder) {}
 
@@ -18,7 +19,7 @@ export class ContactComponent implements OnInit {
       firstName: ["", Validators.required],
       lastName: [""],
       email: ["", [Validators.required, Validators.email]],
-      phoneNo: ["", [Validators.required]],
+      phoneNo: ["", [Validators.required, phoneNumberValidator]],
     });
   }
 
@@ -29,9 +30,7 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.valid) {
-      alert(
-        "Form Submitted succesfully!!!\n Check the values in browser console."
-      );
+      alert("Thank you for registering");
       console.table(this.registerForm.value);
     }
   }
