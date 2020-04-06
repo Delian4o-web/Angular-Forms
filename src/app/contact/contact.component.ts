@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { Validators } from "@angular/forms";
+import { phoneNumberValidator } from "../forms/validators/phone-validator";
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -15,7 +16,7 @@ export class ContactComponent implements OnInit {
       title: new FormControl(""),
       firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl(""),
-      phoneNo: new FormControl("", [Validators.required]),
+      phoneNo: new FormControl("", [Validators.required, phoneNumberValidator]),
       email: new FormControl("", [Validators.required, Validators.email]),
       gender: new FormControl(""),
     });
