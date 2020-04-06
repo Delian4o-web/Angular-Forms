@@ -1,33 +1,17 @@
-<div formGroupName="profileForm" class="wrapper">
-  <h3>Contact Information</h3>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  Title :
+  <select formControlName="title">
+    <option *ngFor="let title of titles" [value]="title">{{ title }}</option>
+  </select>
+  <br />
 
-  <label>
-    Title :
-    <input type="text" formControlName="title" />
-  </label>
+  FirstName : <input formControlName="firstName" /> <br />
 
-  <label>
-    FirstName
-    <input type="text" formControlName="firstName" />
-  </label>
+  LastName : <input formControlName="lastName" /> <br />
 
-  <label>
-    LastName :
-    <input type="text" formControlName="lastName" />
-  </label>
+  Phone No. : <input formControlName="phoneNo" /> <br />
 
-  <label>
-    Phone No. :
-    <input type="text" formControlName="phoneNo" />
-  </label>
+  Email : <input formControlName="email" /> <br />
 
-  <label>
-    Email :
-    <input type="text" formControlName="email" />
-  </label>
-
-  <label>
-    Gender :
-    <input type="text" formControlName="gender" />
-  </label>
-</div>
+  Gender : <input formControlName="gender" /> <br />
+</form>
