@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Address } from "../models/address";
 
 @Component({
   selector: "app-address",
@@ -6,6 +7,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./address.component.scss"],
 })
 export class AddressComponent implements OnInit {
+  address = new Address();
+
   provinces = [
     "Eastern Cape",
     "Free State",
