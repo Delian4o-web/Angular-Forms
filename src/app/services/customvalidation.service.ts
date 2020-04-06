@@ -13,7 +13,7 @@ export class CustomvalidationService {
       }
       const regex = new RegExp("/^+27/");
       const valid = regex.test(control.value);
-      return valid ? null : { invalidPassword: true };
+      return valid ? null : { invalidPhoneNumber: true };
     };
   }
 }
