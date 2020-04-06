@@ -15,10 +15,21 @@
               <label>Address Line 1 :</label>
               <input
                 type="text"
+                name="addLineOne"
                 class="form-control"
                 [(ngModel)]="address.addLineOne"
+                #name="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && name.invalid
+                }"
                 required
               />
+              <div
+                class="invalid-feedback"
+                *ngIf="addressForm.submitted && name.invalid"
+              >
+                <p *ngIf="name.errors.required">Address Line 1 is required</p>
+              </div>
             </div>
 
             <div class="form-group">
@@ -26,7 +37,12 @@
               <input
                 type="text"
                 class="form-control"
+                name="lineTwo"
                 [(ngModel)]="address.addLineTwo"
+                #lineTwo="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && lineTwo.invalid
+                }"
               />
             </div>
 
@@ -35,7 +51,12 @@
               <input
                 type="text"
                 class="form-control"
+                name="suburb"
                 [(ngModel)]="address.suburb"
+                #suburb="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && suburb.invalid
+                }"
               />
             </div>
 
@@ -44,19 +65,33 @@
               <input
                 type="text"
                 class="form-control"
+                name="city"
                 [(ngModel)]="address.city"
+                #city="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && city.invalid
+                }"
+                city
                 required
               />
+              <div
+                class="invalid-feedback"
+                *ngIf="addressForm.submitted && city.invalid"
+              >
+                <p *ngIf="city.errors.required">City is required</p>
+              </div>
             </div>
 
             <div class="form-group">
               <label>Province : </label>
               <select
                 class="form-control"
-                [(ngModel)]="address.province"
+                name="province"
+                [(ngModel)]="provinces"
                 required
               >
-                <option *ngFor="let item of provinces" value="item">{{
+                <option value="">Select an option</option>
+                <option *ngFor="let item of provinces" [value]="item">{{
                   item
                 }}</option>
               </select>
