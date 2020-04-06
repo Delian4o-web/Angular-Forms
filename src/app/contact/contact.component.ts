@@ -8,29 +8,7 @@ import { phoneNumberValidator } from "../forms/validators/phone-validator";
   styleUrls: ["./contact.component.scss"],
 })
 export class ContactComponent implements OnInit {
-  titles = ["Mr.", "Ms.", "Mrs.", "Dr.", "Prof."];
-  contactForm: FormGroup;
+  constructor() {}
 
-  createFormGroup() {
-    return new FormGroup({
-      title: new FormControl(""),
-      firstName: new FormControl("", [Validators.required]),
-      lastName: new FormControl(""),
-      phoneNo: new FormControl("", [Validators.required, phoneNumberValidator]),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      gender: new FormControl(""),
-    });
-  }
-
-  revert() {
-    this.contactForm.reset();
-  }
-
-  onSubmit() {}
-
-  constructor() {
-    this.contactForm = this.createFormGroup();
-  }
-
-  ngOnInit(): void {}
+  ngOnInit() {}
 }
