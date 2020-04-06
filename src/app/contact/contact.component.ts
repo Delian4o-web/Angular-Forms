@@ -15,11 +15,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      name: ["", Validators.required],
+      firstName: ["", Validators.required],
+      lastName: [""],
       email: ["", [Validators.required, Validators.email]],
-      username: ["", [Validators.required]],
-      password: ["", [Validators.required]],
-      confirmPassword: ["", [Validators.required]],
+      phoneNo: ["", [Validators.required]],
     });
   }
 
