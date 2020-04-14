@@ -52,6 +52,25 @@ describe("ContactComponent", () => {
     expect(firstNameInput.errors).toBeNull();
   });
 
+  it("email field validity", () => {
+    let errors = {};
+    let email = component.registerForm.controls["email"];
+    expect(email.valid).toBeFalsy();
+
+    errors = email.errors || {};
+    expect(errors["required"]).toBeTruthy();
+
+    email.setValue("Johnathan");
+    errors = email.errors || {};
+    expect(errors["required"]).toBeFalsy();
+    expect(errors["pattern"]).toBeTruthy();
+
+    email.setValue("dgueorguiev9@gmail.com");
+    errors = email.errors || {};
+    expect(errors["required"]).toBeFalsy();
+    expect(errors["pattern"]).toBeFalsy();
+  });
+
   it("form should be invalid when empty", () => {
     component.registerForm.controls.firstName.setValue("");
     component.registerForm.controls.lastName.setValue("");
