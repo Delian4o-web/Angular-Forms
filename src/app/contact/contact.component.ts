@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 import { Validators } from "@angular/forms";
 import { CustomvalidationService } from "../services/customvalidation.service";
+import { User } from "../models/user";
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -10,6 +11,8 @@ import { CustomvalidationService } from "../services/customvalidation.service";
 export class ContactComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+
+  @Output() userInfo = new EventEmitter<User>();
 
   constructor(
     private fb: FormBuilder,
@@ -37,6 +40,15 @@ export class ContactComponent implements OnInit {
     if (this.registerForm.valid) {
       alert("Thank you for registering");
       console.table(this.registerForm.value);
+
+      this.userInfo.emit(
+        new User(
+          this.registerForm.value.firstName,
+          this.registerForm.value.lastName,
+          this.registerForm.value.email,
+          this.registerForm.value.phoneNum
+        )
+      );
     }
   }
 }
