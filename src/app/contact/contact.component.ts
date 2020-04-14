@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
     this.registerForm = this.fb.group({
       firstName: ["", Validators.required],
       lastName: [""],
-      email: ["", [Validators.required, Validators.email]],
+      email: ["", [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
       phoneNo: [
         "",
         [Validators.required, this.customValidator.patternValidator()],
