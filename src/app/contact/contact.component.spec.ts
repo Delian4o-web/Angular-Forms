@@ -21,11 +21,19 @@ describe("ContactComponent", () => {
         fixture = TestBed.createComponent(ContactComponent);
 
         component = fixture.componentInstance;
+        component.ngOnInit();
 
         de = fixture.debugElement.query(By.css("form"));
         el = de.nativeElement;
       });
   }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ContactComponent);
+    component = fixture.componentInstance;
+    component.ngOnInit();
+    fixture.detectChanges();
+  });
 
   it("should call the onSubmit method", () => {
     fixture.detectChanges();
@@ -34,5 +42,13 @@ describe("ContactComponent", () => {
     el.click();
 
     expect(component.onSubmit).toHaveBeenCalledTimes(1);
+  });
+
+  it("form should be invalid when empty", () => {
+    component.registerForm.controls.firstName.setValue("");
+    component.registerForm.controls.lastName.setValue("");
+    component.registerForm.controls.email.setValue("");
+    component.registerForm.controls.phoneNo.setValue("");
+    expect(component.registerForm.valid).toBeFalsy();
   });
 });
