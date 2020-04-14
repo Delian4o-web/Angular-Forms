@@ -72,6 +72,25 @@ describe("ContactComponent", () => {
     expect(errors["pattern"]).toBeFalsy();
   });
 
+  it("phone number validity with custom validator", () => {
+    let errors = {};
+    let phoneNum = component.registerForm.controls["phoneNo"];
+    expect(phoneNum.valid).toBeFalsy();
+
+    errors = phoneNum.errors || {};
+    expect(errors["required"]).toBeTruthy();
+
+    phoneNum.setValue("635");
+    errors = phoneNum.errors || {};
+    expect(errors["required"]).toBeFalsy();
+    expect(errors["localPhoneNumber"]).toBeTruthy();
+
+    phoneNum.setValue("+27611411010");
+    errors = phoneNum.errors || {};
+    expect(errors["required"]).toBeFalsy();
+    expect(errors["localPhoneNumber"]).toBeFalsy();
+  });
+
   it("submitting a form should emit a user", () => {
     expect(component.registerForm.valid).toBeFalsy();
     component.registerForm.controls.firstName.setValue("Delyan");
