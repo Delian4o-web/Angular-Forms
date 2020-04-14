@@ -44,6 +44,14 @@ describe("ContactComponent", () => {
     expect(component.onSubmit).toHaveBeenCalledTimes(1);
   });
 
+  it("should test input errors", () => {
+    const firstNameInput = component.registerForm.controls.firstName;
+    expect(firstNameInput.errors.required).toBeTruthy();
+
+    firstNameInput.setValue("John");
+    expect(firstNameInput.errors).toBeNull();
+  });
+
   it("form should be invalid when empty", () => {
     component.registerForm.controls.firstName.setValue("");
     component.registerForm.controls.lastName.setValue("");
