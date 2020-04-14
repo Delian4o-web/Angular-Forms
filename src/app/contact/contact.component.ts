@@ -10,7 +10,6 @@ import { CustomvalidationService } from "../services/customvalidation.service";
 export class ContactComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
 
   constructor(
     private fb: FormBuilder,
