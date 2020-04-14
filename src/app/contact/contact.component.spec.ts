@@ -51,4 +51,12 @@ describe("ContactComponent", () => {
     component.registerForm.controls.phoneNo.setValue("");
     expect(component.registerForm.valid).toBeFalsy();
   });
+
+  it("form should be valid with correct input", () => {
+    component.registerForm.controls.firstName.setValue("Delyan");
+    component.registerForm.controls.lastName.setValue("Georgiev");
+    component.registerForm.controls.email.setValue("dgueorguiev9@gmail.com");
+    component.registerForm.controls.phoneNo.setValue("+27611411010");
+    expect(component.registerForm.valid).toBeTruthy();
+  });
 });
