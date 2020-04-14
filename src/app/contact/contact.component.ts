@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
           this.registerForm.value.firstName,
           this.registerForm.value.lastName,
           this.registerForm.value.email,
-          this.registerForm.value.phoneNum
+          this.registerForm.value.phoneNo
         )
       );
     }
