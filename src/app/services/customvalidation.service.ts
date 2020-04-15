@@ -1,0 +1,16 @@
+import { Injectable } from "@angular/core";
+import { ValidatorFn, AbstractControl } from "@angular/forms";
+import { FormGroup } from "@angular/forms";
+
+@Injectable({
+  providedIn: "root",
+})
+export class CustomvalidationService {
+  patternValidator(): ValidatorFn {
+    return (control: AbstractControl) => {
+      const isValid = /^\+27/.test(control.value);
+
+      return isValid ? null : { localPhoneNumber: true };
+    };
+  }
+}

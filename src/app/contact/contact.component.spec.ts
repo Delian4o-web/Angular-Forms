@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-<<<<<<< HEAD:src/app/contact/contact.component.spec.ts
 import { ContactComponent } from "./contact.component";
 import { DebugElement } from "@angular/core";
 import { BrowserModule, By } from "@angular/platform-browser";
@@ -17,17 +16,6 @@ describe("ContactComponent", () => {
     TestBed.configureTestingModule({
       declarations: [ContactComponent],
       imports: [BrowserModule, FormsModule, ReactiveFormsModule],
-=======
-import { AddressComponent } from './address.component';
-
-describe('AddressComponent', () => {
-  let component: AddressComponent;
-  let fixture: ComponentFixture<AddressComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AddressComponent ]
->>>>>>> master:src/app/address/address.component.spec.ts
     })
       .compileComponents()
       .then(() => {
@@ -42,7 +30,7 @@ describe('AddressComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddressComponent);
+    fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
     component.ngOnInit();
     fixture.detectChanges();
