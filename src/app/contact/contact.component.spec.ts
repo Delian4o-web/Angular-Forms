@@ -44,7 +44,7 @@ describe("ContactComponent", () => {
     expect(component.onSubmit).toHaveBeenCalledTimes(1);
   });
 
-  it("should test input errors", () => {
+  it("should make field required", () => {
     const firstNameInput = component.registerForm.controls.firstName;
     expect(firstNameInput.errors.required).toBeTruthy();
 
@@ -101,8 +101,6 @@ describe("ContactComponent", () => {
     component.userInfo.subscribe((value) => (user = value));
 
     component.onSubmit();
-
-    console.log(user);
 
     expect(user.firstName).toBe("Delyan");
     expect(user.lastName).toBe("Georgiev");
