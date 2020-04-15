@@ -90,24 +90,6 @@ describe("ContactComponent", () => {
     expect(errors["localPhoneNumber"]).toBeFalsy();
   });
 
-  it("submitting a form should emit a user", () => {
-    expect(component.registerForm.valid).toBeFalsy();
-    component.registerForm.controls.firstName.setValue("Delyan");
-    component.registerForm.controls.lastName.setValue("Georgiev");
-    component.registerForm.controls.email.setValue("dgueorguiev9@gmail.com");
-    component.registerForm.controls.phoneNo.setValue("+27611411010");
-
-    let user: User;
-    component.userInfo.subscribe((value) => (user = value));
-
-    component.onSubmit();
-
-    expect(user.firstName).toBe("Delyan");
-    expect(user.lastName).toBe("Georgiev");
-    expect(user.email).toBe("dgueorguiev9@gmail.com");
-    expect(user.phoneNum).toBe("+27611411010");
-  });
-
   it("form should be invalid when empty", () => {
     component.registerForm.controls.firstName.setValue("");
     component.registerForm.controls.lastName.setValue("");

@@ -40,15 +40,6 @@ export class ContactComponent implements OnInit {
     if (this.registerForm.valid) {
       alert("Thank you for registering");
       console.table(this.registerForm.value);
-
-      this.userInfo.emit(
-        new User(
-          this.registerForm.value.firstName,
-          this.registerForm.value.lastName,
-          this.registerForm.value.email,
-          this.registerForm.value.phoneNo
-        )
-      );
     }
   }
 }
