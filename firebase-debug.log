@@ -1,0 +1,13 @@
+[debug] [2020-04-15T09:19:42.360Z] ----------------------------------------------------------------------
+[debug] [2020-04-15T09:19:42.362Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dgeorgiev\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-04-15T09:19:42.362Z] CLI Version:   7.13.0
+[debug] [2020-04-15T09:19:42.362Z] Platform:      win32
+[debug] [2020-04-15T09:19:42.362Z] Node Version:  v12.16.1
+[debug] [2020-04-15T09:19:42.362Z] Time:          Wed Apr 15 2020 11:19:42 GMT+0200 (South Africa Standard Time)
+[debug] [2020-04-15T09:19:42.363Z] ----------------------------------------------------------------------
+[debug] [2020-04-15T09:19:42.363Z] 
+[debug] [2020-04-15T09:19:42.368Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-15T09:19:42.368Z] > authorizing via signed-in user
+[debug] [2020-04-15T09:19:42.368Z] [iam] checking project reactive-template-driven-forms for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-15T09:19:42.369Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/reactive-template-driven-forms:testIamPermissions  
+
