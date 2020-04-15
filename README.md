@@ -1,3 +1,7 @@
+# Hosted by Firebase 🔥
+
+Host URL : https://reactive-template-driven-forms.firebaseapp.com/contact
+
 # Angular Reactive Forms vs Template Driven forms
 
 This is a simple Angular application which shows the 2 ways to approach when using forms in Angular :
