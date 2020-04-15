@@ -8,9 +8,7 @@ This is a simple Angular application which shows the 2 ways to approach when usi
 ## Functionality
 
 - Both forms made use of built-in Angular validators , as well as a custom validator for a phone number.
-
 - Display Error messages correctly.
-
 - Once the form is valid , display user information in the console.
 
 ## Unit Testing
