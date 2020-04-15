@@ -8,8 +8,7 @@ import { Address } from "../models/address";
 })
 export class AddressComponent implements OnInit {
   address = new Address();
-
-  provinces = [
+  provinces: string[] = [
     "Eastern Cape",
     "Free State",
     "Gauteng",
@@ -26,6 +25,7 @@ export class AddressComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form) {
-    console.log(form.value);
+    alert("Thanks for adding your address!");
+    console.table(form.value);
   }
 }
