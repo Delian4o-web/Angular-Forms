@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h3>Address</h3>
+        </div>
+        <div class="card-body">
+          <form
+            class="form"
+            #addressForm="ngForm"
+            (ngSubmit)="onSubmit(addressForm)"
+          >
+            <div class="form-group">
+              <label>Address Line 1 :</label>
+              <input
+                type="text"
+                name="addLineOne"
+                class="form-control"
+                [(ngModel)]="address.addLineOne"
+                #name="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && name.invalid
+                }"
+                required
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="addressForm.submitted && name.invalid"
+              >
+                <p *ngIf="name.errors.required">Address Line 1 is required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Address Line 2 :</label>
+              <input
+                type="text"
+                class="form-control"
+                name="lineTwo"
+                [(ngModel)]="address.addLineTwo"
+                #lineTwo="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && lineTwo.invalid
+                }"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Suburb :</label>
+              <input
+                type="text"
+                class="form-control"
+                name="suburb"
+                [(ngModel)]="address.suburb"
+                #suburb="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && suburb.invalid
+                }"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>City :</label>
+              <input
+                type="text"
+                class="form-control"
+                name="city"
+                [(ngModel)]="address.city"
+                #city="ngModel"
+                [ngClass]="{
+                  'is-invalid': addressForm.submitted && city.invalid
+                }"
+                city
+                required
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="addressForm.submitted && city.invalid"
+              >
+                <p *ngIf="city.errors.required">City is required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Province : </label>
+              <select
+                class="form-control"
+                name="province"
+                [(ngModel)]="provinces"
+                required
+              >
+                <option value="">Select an option</option>
+                <option *ngFor="let item of provinces" [value]="item">{{
+                  item
+                }}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Add Address</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
