@@ -1,14 +1,5 @@
 {
-  "targets": {
-    "angular-forms-c96fb": {
-      "hosting": {
-        "angular-forms": [
-          "angular-forms-c96fb"
-        ]
-      }
-    }
-  },
   "projects": {
-    "default": "angular-forms-e51b8"
+    "default": "reactive-template-driven-forms"
   }
 }
