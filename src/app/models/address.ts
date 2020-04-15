@@ -3,5 +3,5 @@ export class Address {
   addLineTwo: string;
   suburb: string;
   city: string;
-  province: string;
+  province: string[];
 }
